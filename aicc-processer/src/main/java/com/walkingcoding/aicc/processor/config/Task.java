@@ -1,8 +1,8 @@
 package com.walkingcoding.aicc.processor.config;
 
-import com.walkingcoding.aicc.processor.config.task.Core3SourceExtractTask;
-import com.walkingcoding.aicc.processor.config.task.FileSourceExtractTask;
-import com.walkingcoding.aicc.processor.config.task.PptSwfSourceExtractTask;
+import com.walkingcoding.aicc.processor.config.task.extract.Core3SourceExtractTask;
+import com.walkingcoding.aicc.processor.config.task.extract.FileSourceExtractTask;
+import com.walkingcoding.aicc.processor.config.task.extract.PptSwfSourceExtractTask;
 import com.walkingcoding.aicc.processor.constant.TaskConstants;
 import com.walkingcoding.aicc.processor.enums.TaskState;
 import lombok.Data;

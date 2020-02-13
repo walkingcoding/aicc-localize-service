@@ -65,14 +65,19 @@ public abstract class ProcessTask {
 
     /**
      * 输出课件目录
-     * @param task
-     * @param globalConfig
+     * @param task 任务对象
+     * @param globalConfig 全局配置
      * @return
      */
     public File getOutPutDirectory(Task task, GlobalConfig globalConfig) {
         return Paths.get(globalConfig.getWorkspace(), globalConfig.getResourceFileFolder(), task.getTaskId()).toFile();
     }
 
+    /**
+     * 执行子任务
+     * @param task 任务对象
+     * @param globalConfig 全局配置
+     */
     public abstract void executeTask(Task task, GlobalConfig globalConfig);
 
 

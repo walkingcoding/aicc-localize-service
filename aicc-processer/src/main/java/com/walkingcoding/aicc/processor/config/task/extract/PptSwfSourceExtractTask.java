@@ -1,4 +1,4 @@
-package com.walkingcoding.aicc.processor.config.task;
+package com.walkingcoding.aicc.processor.config.task.extract;
 
 import com.walkingcoding.aicc.processor.config.GlobalConfig;
 import com.walkingcoding.aicc.processor.config.ProcessTask;

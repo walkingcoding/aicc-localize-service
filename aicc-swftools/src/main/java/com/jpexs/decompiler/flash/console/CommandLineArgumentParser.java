@@ -2059,7 +2059,7 @@ public class CommandLineArgumentParser {
         }
         List<String> ret = new ArrayList<>();
         String classesStr = args.pop();
-        String classes[];
+        String[] classes;
         if (classesStr.contains(",")) {
             classes = classesStr.split(",");
         } else {
