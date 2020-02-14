@@ -28,7 +28,7 @@ public class FileSourceExtractTask extends ProcessTask {
     }
 
     @Override
-    public void executeTask(Task task, GlobalConfig globalConfig) {
+    public void executeTask(Task task, GlobalConfig globalConfig) throws Exception {
 
         // 文件处理
         File videoFile = new File(task.getOriginFile(), "inchen/media/video.wmv");
@@ -37,26 +37,22 @@ public class FileSourceExtractTask extends ProcessTask {
 
         File outputDir = Paths.get(globalConfig.getWorkspace(), globalConfig.getResourceFileFolder(), task.getTaskId()).toFile();
         // 文件复制
-        try {
-            File copyVideoFile = new File(outputDir, "file/video.wmv");
-            File copyAudioFile = new File(outputDir, "file/audio.wma");
-            File copyCoreFile = new File(outputDir, "file/core.cor");
-            // 创建上级目录
-            copyVideoFile.getParentFile().mkdirs();
+        File copyVideoFile = new File(outputDir, "file/video.wmv");
+        File copyAudioFile = new File(outputDir, "file/audio.wma");
+        File copyCoreFile = new File(outputDir, "file/core.cor");
+        // 创建上级目录
+        copyVideoFile.getParentFile().mkdirs();
 
-            if (videoFile.exists() && !copyVideoFile.exists()) {
-                Files.copy(videoFile.toPath(), copyVideoFile.toPath());
-            }
-            if (audioFile.exists() && !copyAudioFile.exists()) {
-                Files.copy(audioFile.toPath(), copyAudioFile.toPath());
-            }
-            if (coreFile.exists() && !copyCoreFile.exists()) {
-                Files.copy(coreFile.toPath(), copyCoreFile.toPath());
-            }
-        } catch (IOException e) {
-            this.state = TaskState.FAILTURE;
-            this.errorMessage = e.getMessage();
+        if (videoFile.exists() && !copyVideoFile.exists()) {
+            Files.copy(videoFile.toPath(), copyVideoFile.toPath());
         }
+        if (audioFile.exists() && !copyAudioFile.exists()) {
+            Files.copy(audioFile.toPath(), copyAudioFile.toPath());
+        }
+        if (coreFile.exists() && !copyCoreFile.exists()) {
+            Files.copy(coreFile.toPath(), copyCoreFile.toPath());
+        }
+
     }
 
     @Override

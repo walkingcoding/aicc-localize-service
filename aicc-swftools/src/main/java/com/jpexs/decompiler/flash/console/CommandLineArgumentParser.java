@@ -2197,7 +2197,8 @@ public class CommandLineArgumentParser {
                             if (type != null && type.length() > 0) {
                                 text += type + " ";
                             }
-                            System.out.println(text + index + "/" + count + " " + data);
+//                            去掉导出的输出
+//                            System.out.println(text + index + "/" + count + " " + data);
                         }
                     }
 
@@ -2207,7 +2208,8 @@ public class CommandLineArgumentParser {
                         if (type != null && type.length() > 0) {
                             text += type + " ";
                         }
-                        System.out.println(text + index + "/" + count + " " + data);
+//                        去掉导出的输出
+//                        System.out.println(text + index + "/" + count + " " + data);
                     }
 
                     @Override

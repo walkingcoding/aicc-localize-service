@@ -3,6 +3,8 @@ package com.walkingcoding.aicc.processor.config;
 import com.walkingcoding.aicc.processor.config.task.extract.Core3SourceExtractTask;
 import com.walkingcoding.aicc.processor.config.task.extract.FileSourceExtractTask;
 import com.walkingcoding.aicc.processor.config.task.extract.PptSwfSourceExtractTask;
+import com.walkingcoding.aicc.processor.config.task.transcoding.EncodingTranscodingTask;
+import com.walkingcoding.aicc.processor.config.task.transcoding.MediaTranscodingTask;
 import com.walkingcoding.aicc.processor.constant.TaskConstants;
 import com.walkingcoding.aicc.processor.enums.TaskState;
 import lombok.Data;
@@ -37,6 +39,7 @@ public class Task {
      * 任务状态
      */
     private TaskState taskState;
+
 
     /**
      * 子任务列表
@@ -73,22 +76,29 @@ public class Task {
         this.processTasks.add(new Core3SourceExtractTask());
         // 3. ppt内容抽取子任务
         this.processTasks.add(new PptSwfSourceExtractTask());
-
         /**第二阶段任务 转码**/
+
+        // 1. 文件编码转换任务
+        this.processTasks.add(new EncodingTranscodingTask());
+        // 2. 媒体文件转码任务
+        this.processTasks.add(new MediaTranscodingTask());
 
         /**第三阶段任务 课件合并**/
     }
 
     public void printProcessTasksStateAndUpdateTaskState() {
+        if (TaskState.FINISH.equals(this.taskState)) {
+            return;
+        }
         // 状态打印并更新任务状态
         boolean finished = true;
-        String tpl = "任务: %s, %s, 详细状态: [%s]";
+        String tpl = "%s %s [%s]";
         StringBuilder detailState = new StringBuilder();
         for (ProcessTask processTask : this.processTasks) {
             if (!processTask.finished()) {
                 finished = false;
             }
-            detailState.append(String.format("{%s=%s}", processTask.code.getName(), processTask.state.getName()));
+            detailState.append(String.format("%s: %s, ", processTask.code.getName(), processTask.state.getName()));
         }
         if (finished) {
             this.setTaskState(TaskState.FINISH);

@@ -55,7 +55,13 @@ public abstract class ProcessTask {
         this.state = TaskState.PROCESSING;
         task.setTaskState(TaskState.PROCESSING);
         if (!taskSuccessExecuted(task, globalConfig)) {
-            executeTask(task, globalConfig);
+            try {
+                executeTask(task, globalConfig);
+            } catch (Exception e) {
+                e.printStackTrace();
+                this.state = TaskState.FAILTURE;
+                this.errorMessage = e.getMessage();
+            }
         }
 
         this.state = TaskState.FINISH;
@@ -77,6 +83,14 @@ public abstract class ProcessTask {
         return Paths.get(globalConfig.getWorkspace(), globalConfig.getResourceFileFolder(), task.getTaskId()).toFile();
     }
 
+    public File getResourceRoot(Task task, GlobalConfig globalConfig) {
+        return Paths.get(globalConfig.getWorkspace(), globalConfig.getResourceFileFolder(), task.getTaskId()).toFile();
+    }
+
+    public File getDistRoot(Task task, GlobalConfig globalConfig) {
+        return Paths.get(globalConfig.getWorkspace(), globalConfig.getDistFileFolder(), task.getTaskId()).toFile();
+    }
+
     /**
      * 输出的相对目录
      *
@@ -91,7 +105,7 @@ public abstract class ProcessTask {
      * @param globalConfig 全局配置
      * @return
      */
-    private boolean taskSuccessExecuted(Task task, GlobalConfig globalConfig) {
+    protected boolean taskSuccessExecuted(Task task, GlobalConfig globalConfig) {
         File courseRoot = getCourseRoot(task, globalConfig);
         return new File(courseRoot, outputDirectory()).exists();
     }
@@ -101,8 +115,9 @@ public abstract class ProcessTask {
      *
      * @param task         任务对象
      * @param globalConfig 全局配置
+     * @throws Exception
      */
-    public abstract void executeTask(Task task, GlobalConfig globalConfig);
+    public abstract void executeTask(Task task, GlobalConfig globalConfig) throws Exception;
 
 
 }

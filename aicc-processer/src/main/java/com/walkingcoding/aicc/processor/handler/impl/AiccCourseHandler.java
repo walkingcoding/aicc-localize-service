@@ -4,7 +4,6 @@ import com.walkingcoding.aicc.processor.config.GlobalConfig;
 import com.walkingcoding.aicc.processor.config.Task;
 import com.walkingcoding.aicc.processor.handler.CourseHandler;
 import org.apache.log4j.Logger;
-import org.apache.log4j.helpers.DateTimeDateFormat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +53,6 @@ public class AiccCourseHandler implements CourseHandler {
             parallelList.get(idx).add(tasks.get(i));
         }
         // 异步执行
-        logger.info(String.format("开始课件任务转换，线程数: %s", parallelList.size()));
         parallelList.forEach(taskList -> {
             // 异步执行
             executorService.execute(() -> executeProcessTask(taskList, globalConfig));
@@ -74,11 +72,10 @@ public class AiccCourseHandler implements CourseHandler {
             return;
         }
         tasks.forEach(task -> {
-            logger.info(String.format(">>> 任务[%s]开始执行...", task.getTaskId()));
             long start = System.currentTimeMillis();
             // 执行子任务
             task.getProcessTasks().forEach(processTask -> processTask.execute(task, globalConfig));
-            logger.info(String.format(">>> 任务[%s]执行完成，耗时: [%ss].", task.getTaskId(), (System.currentTimeMillis() - start) / 1000));
+            logger.info(String.format("[%s]执行完成，耗时: [%ss].", task.getTaskId(), (System.currentTimeMillis() - start) / 1000));
         });
 
     }
