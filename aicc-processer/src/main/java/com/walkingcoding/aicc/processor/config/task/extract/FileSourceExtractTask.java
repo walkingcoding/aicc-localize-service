@@ -58,4 +58,9 @@ public class FileSourceExtractTask extends ProcessTask {
             this.errorMessage = e.getMessage();
         }
     }
+
+    @Override
+    public String outputDirectory() {
+        return "file";
+    }
 }

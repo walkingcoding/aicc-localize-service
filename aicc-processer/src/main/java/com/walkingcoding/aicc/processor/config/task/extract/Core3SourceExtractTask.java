@@ -29,10 +29,15 @@ public class Core3SourceExtractTask extends ProcessTask {
         //TODO core3.swf 处理
         File core3File = new File(task.getOriginFile(), core3FilePath);
 
-        File outputDir = super.getOutPutDirectory(task, globalConfig);
+        File courseRoot = super.getCourseRoot(task, globalConfig);
         SwfDecompilerUtils.export(
                 new ExporterType[]{ExporterType.image, ExporterType.sprite},
-                new File(outputDir, outputDirectory).getPath(),
+                new File(courseRoot, outputDirectory).getPath(),
                 core3File);
+    }
+
+    @Override
+    public String outputDirectory() {
+        return outputDirectory;
     }
 }

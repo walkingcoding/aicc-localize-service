@@ -66,12 +66,17 @@ public class Task {
      * 添加子任务
      */
     private void addProcessTasks() {
-        // 文件拷贝子任务
+        /**第一阶段任务 - 素材抽取**/
+        // 1. 文件拷贝子任务
         this.processTasks.add(new FileSourceExtractTask());
-        // core3.swf内容抽取子任务
+        // 2. core3.swf内容抽取子任务
         this.processTasks.add(new Core3SourceExtractTask());
-        // ppt内容抽取子任务
+        // 3. ppt内容抽取子任务
         this.processTasks.add(new PptSwfSourceExtractTask());
+
+        /**第二阶段任务 转码**/
+
+        /**第三阶段任务 课件合并**/
     }
 
     public void printProcessTasksStateAndUpdateTaskState() {

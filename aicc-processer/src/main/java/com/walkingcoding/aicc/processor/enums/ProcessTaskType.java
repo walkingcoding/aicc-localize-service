@@ -28,27 +28,27 @@ public enum ProcessTaskType {
     /**
      * 音视频转码
      */
-    media_transcoding(CONTENT_TRANSCODING_STAGE, "音视频转码"),
+    MEDIA_TRANSCODING(CONTENT_TRANSCODING_STAGE, "音视频转码"),
 
     /**
      * 封面图片合成
      */
-    cover_image_transcoding(CONTENT_TRANSCODING_STAGE, "封面图片生成"),
+    COVER_IMAGE_TRANSCODING(CONTENT_TRANSCODING_STAGE, "封面图片生成"),
 
     /**
      * 背景图片合成
      */
-    bg_image_transcoding(CONTENT_TRANSCODING_STAGE, "背景图片生成"),
+    BG_IMAGE_TRANSCODING(CONTENT_TRANSCODING_STAGE, "背景图片生成"),
 
     /**
      * 文件转码
      */
-    encoding_transcoding(CONTENT_TRANSCODING_STAGE, "文件转码"),
+    ENCODING_TRANSCODING(CONTENT_TRANSCODING_STAGE, "文件转码"),
 
     /**
      * 课件合并
      */
-    merge(COURSE_MERGE_STAGE, "课件合并");
+    MERGE(COURSE_MERGE_STAGE, "课件合并");
 
 
     private String stage;
