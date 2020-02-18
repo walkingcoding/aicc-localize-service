@@ -3,6 +3,8 @@ package com.walkingcoding.aicc.processor.config;
 import com.walkingcoding.aicc.processor.config.task.extract.Core3SourceExtractTask;
 import com.walkingcoding.aicc.processor.config.task.extract.FileSourceExtractTask;
 import com.walkingcoding.aicc.processor.config.task.extract.PptSwfSourceExtractTask;
+import com.walkingcoding.aicc.processor.config.task.transcoding.BgImageTranscodingTask;
+import com.walkingcoding.aicc.processor.config.task.transcoding.CoverImageTranscodingTask;
 import com.walkingcoding.aicc.processor.config.task.transcoding.EncodingTranscodingTask;
 import com.walkingcoding.aicc.processor.config.task.transcoding.MediaTranscodingTask;
 import com.walkingcoding.aicc.processor.constant.TaskConstants;
@@ -82,6 +84,10 @@ public class Task {
         this.processTasks.add(new EncodingTranscodingTask());
         // 2. 媒体文件转码任务
         this.processTasks.add(new MediaTranscodingTask());
+        // 3. 背景图转换
+        this.processTasks.add(new BgImageTranscodingTask());
+        // 4.封面图转换
+        this.processTasks.add(new CoverImageTranscodingTask());
 
         /**第三阶段任务 课件合并**/
     }
