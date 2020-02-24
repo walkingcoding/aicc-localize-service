@@ -37,11 +37,11 @@ public class PptSwfSourceExtractTask extends ProcessTask {
         // 获取swf列表
         File directory = new File(task.getOriginFile(), pptFileDirectory);
         File[] files = directory.listFiles((dir, name) -> name.endsWith(".swf"));
-        Arrays.stream(files).forEach(swf -> {
-            SwfDecompilerUtils.export(ExporterType.frame,
-                    Paths.get(outputDir, outputDirectory, FilenameUtils.getBaseName(swf.getName())).toString(),
-                    swf);
-        });
+        Arrays.stream(files).forEach(swf ->
+                SwfDecompilerUtils.export(ExporterType.frame,
+                        Paths.get(outputDir, outputDirectory, FilenameUtils.getBaseName(swf.getName())).toString(),
+                        swf)
+        );
     }
 
     @Override

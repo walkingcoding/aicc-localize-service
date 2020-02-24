@@ -16,11 +16,6 @@ import java.util.LinkedList;
  * @author songhuiqing
  */
 public class Im4Java {
-    public static void main(String[] args) throws InterruptedException, IOException, IM4JavaException {
-        String src = "/Users/songhuiqing/docker/nginx/html/workspace/resource/ADKS2018030/image/index_bg.png";
-        String dist = "/Users/songhuiqing/docker/nginx/html/workspace/resource/ADKS2018030/image/index_bg1.jpg";
-        new Im4Java("/Users/songhuiqing/apps/ImageMagick-7.0.9/bin").transferToJpg(src, dist);
-    }
 
     class ConvertCmd extends ImageCommand {
 
@@ -28,7 +23,7 @@ public class Im4Java {
 
         public ConvertCmd() {
             super();
-            setCommand("convert");
+            setCommand("magick", "convert");
         }
 
         @Override
@@ -74,6 +69,7 @@ public class Im4Java {
 
 
     public Im4Java() {
+        this("");
     }
 
     public Im4Java(String imageMagickPath) {
@@ -82,6 +78,7 @@ public class Im4Java {
             this.convertCmd.setSearchPath(imageMagickPath);
         }
     }
+
 
     public void resize(String src, String dist, int w, int h)
             throws IOException, InterruptedException, IM4JavaException {
@@ -112,5 +109,27 @@ public class Im4Java {
         op.addImage(src);
         op.addImage(dist);
         convertCmd.run(op);
+    }
+
+
+    /**
+     * 图片覆盖
+     *
+     * @param overImage  覆盖的图片
+     * @param background 背景图片
+     * @param dist       输出图片
+     * @throws InterruptedException
+     * @throws IOException
+     * @throws IM4JavaException
+     */
+    public void over(String overImage, String background, String dist) throws InterruptedException, IOException, IM4JavaException {
+        // magick composite -gravity center over.png background.png new1.jpg
+        convertCmd.run(new IMOperation()
+                .composite()
+                .gravity("center")
+                .addImage(overImage)
+                .addImage(background)
+                .addImage(dist)
+        );
     }
 }

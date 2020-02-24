@@ -4,7 +4,9 @@ import com.walkingcoding.aicc.processor.config.GlobalConfig;
 import com.walkingcoding.aicc.processor.config.ProcessTask;
 import com.walkingcoding.aicc.processor.config.Task;
 import com.walkingcoding.aicc.processor.enums.ProcessTaskType;
+import com.walkingcoding.aicc.processor.enums.TaskState;
 import com.walkingcoding.aicc.processor.util.Im4Java;
+import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,14 +31,28 @@ public class BgImageTranscodingTask extends ProcessTask {
         // TODO 背景图转码任务
         File resourceRoot = getResourceRoot(task, globalConfig);
         File targetDir = new File(resourceRoot.getPath(), bgImagePath);
-        File[] files = new File(resourceRoot, sourceCoverImagePath).listFiles(((dir, name) -> name.contains("frame_bg")));
-        if (files != null && files.length != 0) {
-            try {
-                new Im4Java().trim(files[0].getPath(), targetDir.getPath());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+        File[] files = new File(resourceRoot, sourceCoverImagePath).listFiles(((dir, name) -> isBgImage(name)));
+        if (files == null || files.length == 0) {
+            super.state = TaskState.FAILTURE;
+            super.errorMessage = "背景图片不存在";
+            return;
         }
+        try {
+            // 去白边，并转换成jpg格式
+            new Im4Java().trim(files[0].getPath(), targetDir.getPath());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 背景图片规则，文件名为b，不限制类型
+     *
+     * @param fileName
+     * @return
+     */
+    private boolean isBgImage(String fileName) {
+        return "b".equalsIgnoreCase(FilenameUtils.getBaseName(fileName));
     }
 
     @Override

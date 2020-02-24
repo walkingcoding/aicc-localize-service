@@ -3,10 +3,7 @@ package com.walkingcoding.aicc.processor.config;
 import com.walkingcoding.aicc.processor.config.task.extract.Core3SourceExtractTask;
 import com.walkingcoding.aicc.processor.config.task.extract.FileSourceExtractTask;
 import com.walkingcoding.aicc.processor.config.task.extract.PptSwfSourceExtractTask;
-import com.walkingcoding.aicc.processor.config.task.transcoding.BgImageTranscodingTask;
-import com.walkingcoding.aicc.processor.config.task.transcoding.CoverImageTranscodingTask;
-import com.walkingcoding.aicc.processor.config.task.transcoding.EncodingTranscodingTask;
-import com.walkingcoding.aicc.processor.config.task.transcoding.MediaTranscodingTask;
+import com.walkingcoding.aicc.processor.config.task.transcoding.*;
 import com.walkingcoding.aicc.processor.constant.TaskConstants;
 import com.walkingcoding.aicc.processor.enums.TaskState;
 import lombok.Data;
@@ -88,6 +85,8 @@ public class Task {
         this.processTasks.add(new BgImageTranscodingTask());
         // 4.封面图转换
         this.processTasks.add(new CoverImageTranscodingTask());
+        // 5.ppt转换
+        this.processTasks.add(new PptImageTranscodingTask());
 
         /**第三阶段任务 课件合并**/
     }

@@ -23,7 +23,6 @@ public class ImageUtils {
     public final static String[] SUFFIX_IMAGE = new String[]{"png", "jpg"};
 
     public interface ImageFilter {
-
         /**
          * 图片过滤
          *

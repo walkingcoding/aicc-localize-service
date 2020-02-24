@@ -41,15 +41,20 @@ public class Core3SourceExtractTask extends ProcessTask {
                 core3File);
         // 处理图片，将小图片删除，并将所有目录中的图片放在同一个目录中
         List<File> imageList = ImageUtils.filterImages(imageDir.getPath(), image -> image.getWidth() >= 500 && image.getHeight() >= 500);
-        // TODO 拷贝图片到最外层目录，并进行图片转换
+        // 拷贝图片到最外层目录
         try {
             for (File image : imageList) {
                 Files.copy(image.toPath(), Paths.get(imageDir.getPath(), image.getName()));
             }
+            // 删除原始图片？
+            File swfImagesDir = new File(imageDir, "images");
+            File swfSpritesDir = new File(imageDir, "sprites");
+            Files.deleteIfExists(swfImagesDir.toPath());
+            Files.deleteIfExists(swfSpritesDir.toPath());
         } catch (IOException e) {
-
+            e.printStackTrace();
         }
-        // 删除原始图片？
+
 
     }
 

@@ -41,6 +41,11 @@ public enum ProcessTaskType {
     BG_IMAGE_TRANSCODING(CONTENT_TRANSCODING_STAGE, "背景图片生成"),
 
     /**
+     * PPT图片生成
+     */
+    PPT_IMAGE_TRANSCODING(CONTENT_TRANSCODING_STAGE, "PPT图片生成"),
+
+    /**
      * 文件转码
      */
     ENCODING_TRANSCODING(CONTENT_TRANSCODING_STAGE, "文件转码"),
