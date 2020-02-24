@@ -4,6 +4,7 @@ import com.walkingcoding.aicc.processor.config.GlobalConfig;
 import com.walkingcoding.aicc.processor.config.ProcessTask;
 import com.walkingcoding.aicc.processor.config.Task;
 import com.walkingcoding.aicc.processor.enums.ProcessTaskType;
+import com.walkingcoding.aicc.processor.util.Im4Java;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class BgImageTranscodingTask extends ProcessTask {
     }
 
     private String sourceCoverImagePath = "image";
-    private String bgImagePath = "transcoding/core";
+    private String bgImagePath = "transcoding/core/frame_bg.jpg";
 
     @Override
     public void executeTask(Task task, GlobalConfig globalConfig) {
@@ -31,8 +32,8 @@ public class BgImageTranscodingTask extends ProcessTask {
         File[] files = new File(resourceRoot, sourceCoverImagePath).listFiles(((dir, name) -> name.contains("frame_bg")));
         if (files != null && files.length != 0) {
             try {
-                Files.copy(files[0].toPath(), Paths.get(targetDir.getPath(), files[0].getName()));
-            } catch (IOException e) {
+                new Im4Java().trim(files[0].getPath(), targetDir.getPath());
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -40,6 +41,6 @@ public class BgImageTranscodingTask extends ProcessTask {
 
     @Override
     public String outputDirectory() {
-        return bgImagePath + "/frame_bg.jpg";
+        return bgImagePath;
     }
 }

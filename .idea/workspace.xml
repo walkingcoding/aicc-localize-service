@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc210fa3-863c-4df2-9f63-3865055c2593" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/ImageUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/Im4Java.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/aicc-processer/src/main/java/org/im4java/process/ProcessStarter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/extract/Core3SourceExtractTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/extract/Core3SourceExtractTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aicc-processer/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/aicc-processer/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/BgImageTranscodingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/BgImageTranscodingTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/CoverImageTranscodingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/CoverImageTranscodingTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/MediaTranscodingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/MediaTranscodingTask.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,24 +30,21 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/BgImageTranscodingTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+            <state relative-caret-position="230">
+              <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
               <folding>
-                <element signature="e#1393#1394#0" expanded="true" />
-                <element signature="e#1445#1446#0" expanded="true" />
+                <element signature="e#1413#1414#0" expanded="true" />
+                <element signature="e#1465#1466#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/handler/impl/AiccCourseHandler.java">
+        <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/Im4Java.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="76" column="70" selection-start-line="76" selection-start-column="70" selection-end-line="76" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="290">
+              <caret line="103" column="104" selection-start-line="103" selection-start-column="53" selection-end-line="103" selection-end-column="104" />
             </state>
           </provider>
         </entry>
@@ -57,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/MediaTranscodingTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="209">
               <caret line="17" column="36" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -67,13 +62,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/ProcessTask.java">
+        <entry file="file://$PROJECT_DIR$/aicc-processer/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+            <state relative-caret-position="482">
+              <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/ImageUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/im4java/im4java/1.4.0/im4java-1.4.0.jar!/org/im4java/process/ProcessEvent.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/im4java/im4java/1.4.0/im4java-1.4.0.jar!/org/im4java/core/ImageCommand.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1083">
+              <caret line="87" selection-start-line="87" selection-end-line="87" />
             </state>
           </provider>
         </entry>
@@ -81,38 +103,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/CoverImageTranscodingTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="34" column="75" lean-forward="true" selection-start-line="34" selection-start-column="75" selection-end-line="34" selection-end-column="95" />
+            <state relative-caret-position="342">
+              <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="26" />
               <folding>
-                <element signature="e#1410#1411#0" expanded="true" />
-                <element signature="e#1462#1463#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/extract/Core3SourceExtractTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="346">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1915#1916#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/extract/FileSourceExtractTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2105#2106#0" expanded="true" />
-                <element signature="e#2134#2135#0" expanded="true" />
+                <element signature="e#1430#1431#0" expanded="true" />
+                <element signature="e#1485#1486#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,7 +116,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/EncodingTranscodingTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="722">
+            <state relative-caret-position="613">
               <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
               <folding>
                 <element signature="e#1843#1844#0" expanded="true" />
@@ -132,26 +127,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/main/AiccCourseProcessor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="119" column="13" selection-start-line="119" selection-start-column="13" selection-end-line="119" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/Task.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
+            <state relative-caret-position="1444">
               <caret line="89" column="63" selection-start-line="89" selection-start-column="63" selection-end-line="89" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2957#2958#0" expanded="true" />
-                <element signature="e#3014#3015#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -189,6 +170,8 @@
       <find>&gt;&gt;&gt;</find>
       <find>Exporting</find>
       <find>开始课件任务转换</find>
+      <find>auto</find>
+      <find>trim</find>
     </findStrings>
     <replaceStrings>
       <replace>MainDecompiler.</replace>
@@ -203,10 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processer/custom/handler/Core3SwfExtractHanlder.java" />
-        <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processer/Main.java" />
-        <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processer/custom/handler/PptSwfExtractHandler.java" />
-        <option value="$PROJECT_DIR$/aicc-swftools/src/main/java/com/walkingcoding/aicc/swftools/MainDecompiler.java" />
         <option value="$PROJECT_DIR$/aicc-swftools/src/main/java/com/jpexs/decompiler/flash/gui/MainPanel.java" />
         <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processer/handler/SourceExtractHandler.java" />
         <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processer/enums/TaskState.java" />
@@ -242,7 +221,6 @@
         <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/handler/impl/VideoTranscodingExecutor.java" />
         <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/handler/CommandExecutor.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/aicc-processer/pom.xml" />
         <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/ExecUtils.java" />
         <option value="$PROJECT_DIR$/aicc-swftools/src/main/java/com/jpexs/decompiler/flash/console/CommandLineArgumentParser.java" />
         <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/extract/PptSwfSourceExtractTask.java" />
@@ -252,8 +230,13 @@
         <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/extract/Core3SourceExtractTask.java" />
         <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/MediaTranscodingTask.java" />
         <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/Task.java" />
-        <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/CoverImageTranscodingTask.java" />
+        <option value="$PROJECT_DIR$/aicc-processer/pom.xml" />
+        <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/Im4JavaUtils.java" />
+        <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/org/im4java/process/ProcessStarter.java" />
+        <option value="$PROJECT_DIR$/aicc-processer/src/main/java/org/im4java/process/ProcessStarter.java" />
+        <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/Im4Java.java" />
         <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/BgImageTranscodingTask.java" />
+        <option value="$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/CoverImageTranscodingTask.java" />
       </list>
     </option>
   </component>
@@ -305,7 +288,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -422,72 +404,22 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="processor" type="462c0819:PsiDirectoryNode" />
-              <item name="handler" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aicc-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aicc-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="aicc-processer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="processor" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aicc-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="aicc-parent" type="462c0819:PsiDirectoryNode" />
-              <item name="aicc-processer" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="processor" type="462c0819:PsiDirectoryNode" />
               <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="aicc-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="aicc-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="aicc-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aicc-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="aicc-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="aicc-processer" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aicc-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="awt" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="aicc-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="awt" type="462c0819:PsiDirectoryNode" />
-              <item name="image" type="462c0819:PsiDirectoryNode" />
+              <item name="process" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -508,9 +440,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.im4java.process" />
+      <recent name="com.walkingcoding.aicc.processor.org.im4java.process" />
+      <recent name="com.walkingcoding.aicc.processor.util" />
       <recent name="com.walkingcoding.aicc.processor.handler" />
       <recent name="com.walkingcoding.aicc.processor.config.task" />
-      <recent name="com.walkingcoding.aicc.processor.config.task.transcoding" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/aicc-swftools/src/main/java/com/jpexs/decompiler/flash/exporters" />
@@ -528,7 +462,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AiccCourseProcessor">
+  <component name="RunManager" selected="Application.Im4Java">
     <configuration name="AiccCourseProcessor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.walkingcoding.aicc.processor.main.AiccCourseProcessor" />
       <module name="aicc-processer" />
@@ -568,8 +502,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImageUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.walkingcoding.aicc.processor.util.ImageUtils" />
+    <configuration name="Im4Java" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.walkingcoding.aicc.processor.util.Im4Java" />
       <module name="aicc-processer" />
       <extension name="coverage">
         <pattern>
@@ -581,12 +515,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.walkingcoding.aicc.processor.Main" />
+    <configuration name="ImageUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.walkingcoding.aicc.processor.util.ImageUtils" />
       <module name="aicc-processer" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.walkingcoding.aicc.processor.main.*" />
+          <option name="PATTERN" value="com.walkingcoding.aicc.processor.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -615,11 +549,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Im4Java" />
         <item itemvalue="Application.AiccCourseProcessor" />
         <item itemvalue="Application.ImageUtils" />
         <item itemvalue="Application.ExecUtils" />
         <item itemvalue="Application.EncodingTranscodingTask" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -638,7 +572,9 @@
       <workItem from="1581485580372" duration="38077000" />
       <workItem from="1581651902426" duration="744000" />
       <workItem from="1581658460282" duration="19582000" />
-      <workItem from="1581762482199" duration="14363000" />
+      <workItem from="1581762482199" duration="15451000" />
+      <workItem from="1582349068768" duration="15000" />
+      <workItem from="1582520236588" duration="2737000" />
     </task>
     <task id="LOCAL-00001" summary="初始化项目结构，增加jpexs的引用">
       <created>1581420616522</created>
@@ -675,11 +611,18 @@
       <option name="project" value="LOCAL" />
       <updated>1581680017687</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="增加图片过滤及图片拷贝，后续需要对图片进行加工，切边及格式转换">
+      <created>1582030176825</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1582030176825</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86946000" />
+    <option name="totallyTimeSpent" value="90786000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -694,15 +637,15 @@
     <frame x="0" y="23" width="1680" height="963" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.65829146" visible="true" weight="0.23382173" />
-      <window_info id="Structure" order="1" sideWeight="0.34170854" side_tool="true" visible="true" weight="0.23382173" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.30621302" visible="true" weight="0.23992674" />
+      <window_info id="Structure" order="1" sideWeight="0.6948148" side_tool="true" weight="0.1947497" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31458095" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.45579794" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2238806" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.30998853" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.49598163" />
@@ -737,7 +680,20 @@
     <MESSAGE value="调整素材抽取任务包结构" />
     <MESSAGE value="增加任务是否执行判断逻辑" />
     <MESSAGE value="1. 增加音视频转码&#10;2. 增加格式化输出" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 增加音视频转码&#10;2. 增加格式化输出" />
+    <MESSAGE value="增加图片过滤及图片拷贝，后续需要对图片进行加工，切边及格式转换" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加图片过滤及图片拷贝，后续需要对图片进行加工，切边及格式转换" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/aicc-processer/src/main/java/org/im4java/process/ProcessStarter.java</url>
+          <line>622</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -754,73 +710,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/docker/nginx/html/cw/课件/单视频课/core/core.cor">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="36" selection-start-column="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/docker/nginx/html/workspace/origin/ADKS2018030/core/core.cor">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="15" lean-forward="true" selection-start-line="4" selection-start-column="15" selection-end-line="4" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/docker/nginx/html/cw/课件/单视频课/替换文件/core.cor">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="408" column="31" lean-forward="true" selection-start-line="408" selection-start-column="31" selection-end-line="408" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/nio/charset/StandardCharsets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="47" column="42" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/util/function/UnaryOperator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="48" column="28" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/src.zip!/java/nio/charset/Charset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="603" column="26" selection-start-line="603" selection-start-column="26" selection-end-line="603" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/commons-io/commons-io/2.6/commons-io-2.6.jar!/org/apache/commons/io/IOUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/GlobalConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/docker/nginx/html/workspace/resource/ADKS2018031/transcoding/core.cor" />
     <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/MergeTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -907,13 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="57" column="27" selection-start-line="57" selection-start-column="27" selection-end-line="57" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aicc-processer/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1022,74 +904,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/ImageUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/extract/FileSourceExtractTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2105#2106#0" expanded="true" />
-            <element signature="e#2134#2135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/extract/Core3SourceExtractTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1915#1916#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/Task.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="89" column="63" selection-start-line="89" selection-start-column="63" selection-end-line="89" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2957#2958#0" expanded="true" />
-            <element signature="e#3014#3015#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/MediaTranscodingTask.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/main/AiccCourseProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="119" column="13" selection-start-line="119" selection-start-column="13" selection-end-line="119" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/handler/impl/AiccCourseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
+        <state relative-caret-position="1254">
           <caret line="76" column="70" selection-start-line="76" selection-start-column="70" selection-end-line="76" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1099,8 +916,157 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/ProcessTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="110" column="5" lean-forward="true" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+        <state relative-caret-position="2014">
+          <caret line="110" column="5" selection-start-line="110" selection-start-column="5" selection-end-line="110" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/extract/Core3SourceExtractTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1877#1878#0" expanded="true" />
+            <element signature="e#1915#1916#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/extract/FileSourceExtractTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2105#2106#0" expanded="true" />
+            <element signature="e#2134#2135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/main/AiccCourseProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2052">
+          <caret line="119" column="13" selection-start-line="119" selection-start-column="13" selection-end-line="119" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/Task.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1444">
+          <caret line="89" column="63" selection-start-line="89" selection-start-column="63" selection-end-line="89" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$MAVEN_REPOSITORY$/ws/schild/jave-all-deps/2.7.3/jave-all-deps-2.7.3.pom">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2308" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/Im4JavaUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/im4java/im4java/1.4.0/im4java-1.4.0.jar!/org/im4java/process/ProcessStarter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="610">
+          <caret line="191" column="16" selection-start-line="191" selection-start-column="16" selection-end-line="191" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/org/im4java/process/ProcessStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="328" column="38" selection-start-line="328" selection-start-column="38" selection-end-line="328" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/im4java/im4java/1.4.0/im4java-1.4.0.jar!/org/im4java/process/ProcessEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/org/im4java/process/ProcessStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="649" selection-start-line="649" selection-end-line="649" />
+          <folding>
+            <element signature="e#14321#14322#0" expanded="true" />
+            <element signature="e#14355#14356#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/im4java/im4java/1.4.0/im4java-1.4.0.jar!/org/im4java/core/ImageCommand.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1083">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/im4java/im4java/1.4.0/im4java-1.4.0.jar!/org/im4java/core/Operation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="61" column="42" lean-forward="true" selection-start-line="61" selection-start-column="42" selection-end-line="61" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/im4java/im4java/1.4.0/im4java-1.4.0.jar!/org/im4java/core/IMOps.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10758" column="20" lean-forward="true" selection-start-line="10758" selection-start-column="18" selection-end-line="10758" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/ImageUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/util/Im4Java.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="103" column="104" selection-start-line="103" selection-start-column="53" selection-end-line="103" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/MediaTranscodingTask.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1109,7 +1075,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/EncodingTranscodingTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
+        <state relative-caret-position="613">
           <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
           <folding>
             <element signature="e#1843#1844#0" expanded="true" />
@@ -1120,22 +1086,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/CoverImageTranscodingTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="34" column="75" lean-forward="true" selection-start-line="34" selection-start-column="75" selection-end-line="34" selection-end-column="95" />
+        <state relative-caret-position="342">
+          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="26" />
           <folding>
-            <element signature="e#1410#1411#0" expanded="true" />
-            <element signature="e#1462#1463#0" expanded="true" />
+            <element signature="e#1430#1431#0" expanded="true" />
+            <element signature="e#1485#1486#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/aicc-processer/src/main/java/com/walkingcoding/aicc/processor/config/task/transcoding/BgImageTranscodingTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="40" column="13" lean-forward="true" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
+        <state relative-caret-position="230">
+          <caret line="31" column="27" lean-forward="true" selection-start-line="31" selection-start-column="27" selection-end-line="31" selection-end-column="27" />
           <folding>
-            <element signature="e#1393#1394#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
+            <element signature="e#1413#1414#0" expanded="true" />
+            <element signature="e#1465#1466#0" expanded="true" />
           </folding>
         </state>
       </provider>
