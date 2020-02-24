@@ -185,7 +185,7 @@ public class AiccCourseProcessor {
                 ++noneNum;
             }
         }
-        String progress = ((doneNum / total) * 100) + "%";
+        String progress = ((doneNum * 100) / total) + "%";
         System.out.println(String.format("*** 课件总数: %s, 完成进度: %s, 已完成: %s, 进行中: %s, 未开始: %s ***", total, progress, doneNum, processNum, noneNum));
 
         return finished;

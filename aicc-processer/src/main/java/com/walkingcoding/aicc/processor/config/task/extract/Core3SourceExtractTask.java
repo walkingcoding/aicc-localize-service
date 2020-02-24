@@ -7,12 +7,14 @@ import com.walkingcoding.aicc.processor.enums.ProcessTaskType;
 import com.walkingcoding.aicc.processor.util.ImageUtils;
 import com.walkingcoding.aicc.swftools.SwfDecompilerUtils;
 import com.walkingcoding.aicc.swftools.exporter.ExporterType;
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * core3.swf提取任务
@@ -40,22 +42,30 @@ public class Core3SourceExtractTask extends ProcessTask {
                 imageDir.getPath(),
                 core3File);
         // 处理图片，将小图片删除，并将所有目录中的图片放在同一个目录中
-        List<File> imageList = ImageUtils.filterImages(imageDir.getPath(), image -> image.getWidth() >= 500 && image.getHeight() >= 500);
+        List<File> imageList = ImageUtils.filterImages(imageDir.getPath(), image -> image.getWidth() >= 800 && image.getHeight() >= 400);
         // 拷贝图片到最外层目录
         try {
             for (File image : imageList) {
-                Files.copy(image.toPath(), Paths.get(imageDir.getPath(), image.getName()));
+                File distFile = new File(imageDir.getPath(), image.getName());
+                if (distFile.exists()) {
+                    distFile = new File(distFile.getParent(), getRandomFileName(distFile.getName()));
+                }
+                Files.copy(image.toPath(), distFile.toPath());
             }
             // 删除原始图片？
             File swfImagesDir = new File(imageDir, "images");
             File swfSpritesDir = new File(imageDir, "sprites");
-            Files.deleteIfExists(swfImagesDir.toPath());
-            Files.deleteIfExists(swfSpritesDir.toPath());
+            FileUtils.deleteDirectory(swfImagesDir);
+            FileUtils.deleteDirectory(swfSpritesDir);
         } catch (IOException e) {
             e.printStackTrace();
         }
 
 
+    }
+
+    private String getRandomFileName(String fileName) {
+        return String.format("%s_%s.%s", FilenameUtils.getBaseName(fileName), UUID.randomUUID().toString(), FilenameUtils.getExtension(fileName));
     }
 
     @Override
