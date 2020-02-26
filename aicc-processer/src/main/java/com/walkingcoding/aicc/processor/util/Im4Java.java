@@ -21,9 +21,9 @@ public class Im4Java {
 
         boolean isWindows = File.pathSeparator.equals(";");
 
-        public ConvertCmd() {
-            super();
-            setCommand("magick", "convert");
+
+        public ConvertCmd(String... args) {
+            super(args);
         }
 
         @Override
@@ -66,6 +66,7 @@ public class Im4Java {
     }
 
     private ConvertCmd convertCmd;
+    private ConvertCmd compositeCmd;
 
 
     public Im4Java() {
@@ -73,7 +74,8 @@ public class Im4Java {
     }
 
     public Im4Java(String imageMagickPath) {
-        this.convertCmd = new ConvertCmd();
+        this.convertCmd = new ConvertCmd("magick", "convert");
+        this.compositeCmd = new ConvertCmd("magick", "composite");
         if (imageMagickPath != null && !"".equals(imageMagickPath)) {
             this.convertCmd.setSearchPath(imageMagickPath);
         }
@@ -124,8 +126,8 @@ public class Im4Java {
      */
     public void over(String overImage, String background, String dist) throws InterruptedException, IOException, IM4JavaException {
         // magick composite -gravity center over.png background.png new1.jpg
-        convertCmd.run(new IMOperation()
-                .composite()
+        // magick convert -composite -gravity center o.png c.png new1.jpg
+        compositeCmd.run(new IMOperation()
                 .gravity("center")
                 .addImage(overImage)
                 .addImage(background)

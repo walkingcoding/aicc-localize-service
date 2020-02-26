@@ -50,11 +50,12 @@ public class CoverImageTranscodingTask extends ProcessTask {
             return;
         }
         try {
-            // 先将封面图去除白边
-            new Im4Java().trim(files[0].getPath(), targetFile.getPath());
-            // 如果存在上层图片，则覆盖上层图片到封面图上
-            if(overImage != null) {
-                new Im4Java().over(overImage.getPath(), targetFile.getPath(), targetFile.getPath());
+            if(overImage == null) {
+                new Im4Java().trim(coverImage.getPath(), targetFile.getPath());
+            } else {
+                // 如果存在上层图片，则覆盖上层图片到封面图上
+                new Im4Java().trim(coverImage.getPath(), coverImage.getPath());
+                new Im4Java().over(overImage.getPath(), coverImage.getPath(), targetFile.getPath());
             }
         } catch (Exception e) {
             e.printStackTrace();
