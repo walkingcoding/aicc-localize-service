@@ -72,8 +72,8 @@ public class MediaTranscodingTask extends ProcessTask {
     }
 
     @Override
-    public String outputDirectory() {
-        return mediaTranscodingPath;
+    protected boolean taskSuccessExecuted(File resourceRoot, File distRoot) {
+        return new File(resourceRoot, mediaTranscodingPath).exists();
     }
 
 }

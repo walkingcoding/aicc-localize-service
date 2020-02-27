@@ -7,6 +7,7 @@ import com.walkingcoding.aicc.processor.enums.ProcessTaskType;
 import com.walkingcoding.aicc.processor.enums.TaskState;
 import com.walkingcoding.aicc.processor.util.Im4Java;
 import org.apache.commons.io.FilenameUtils;
+import org.im4java.core.IM4JavaException;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,10 +25,10 @@ public class BgImageTranscodingTask extends ProcessTask {
     }
 
     private String sourceCoverImagePath = "image";
-    private String bgImagePath = "transcoding/core/frame_bg.jpg";
+    private String bgImagePath = "transcoding/core/frame-bg.jpg";
 
     @Override
-    public void executeTask(Task task, GlobalConfig globalConfig) {
+    public void executeTask(Task task, GlobalConfig globalConfig) throws InterruptedException, IOException, IM4JavaException {
         // TODO 背景图转码任务
         File resourceRoot = getResourceRoot(task, globalConfig);
         File targetDir = new File(resourceRoot.getPath(), bgImagePath);
@@ -37,12 +38,8 @@ public class BgImageTranscodingTask extends ProcessTask {
             super.errorMessage = "背景图片不存在";
             return;
         }
-        try {
-            // 去白边，并转换成jpg格式
-            new Im4Java().trim(files[0].getPath(), targetDir.getPath());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        // 去白边，并转换成jpg格式
+        new Im4Java().trim(files[0].getPath(), targetDir.getPath());
     }
 
     /**
@@ -56,7 +53,7 @@ public class BgImageTranscodingTask extends ProcessTask {
     }
 
     @Override
-    public String outputDirectory() {
-        return bgImagePath;
+    protected boolean taskSuccessExecuted(File resourceRoot, File distRoot) {
+        return new File(resourceRoot, bgImagePath).exists();
     }
 }

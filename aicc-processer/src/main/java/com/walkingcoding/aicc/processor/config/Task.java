@@ -1,5 +1,6 @@
 package com.walkingcoding.aicc.processor.config;
 
+import com.walkingcoding.aicc.processor.config.task.MergeTask;
 import com.walkingcoding.aicc.processor.config.task.extract.Core3SourceExtractTask;
 import com.walkingcoding.aicc.processor.config.task.extract.FileSourceExtractTask;
 import com.walkingcoding.aicc.processor.config.task.extract.PptSwfSourceExtractTask;
@@ -89,6 +90,7 @@ public class Task {
         this.processTasks.add(new PptImageTranscodingTask());
 
         /**第三阶段任务 课件合并**/
+        this.processTasks.add(new MergeTask());
     }
 
     public void printProcessTasksStateAndUpdateTaskState() {
@@ -97,16 +99,23 @@ public class Task {
         }
         // 状态打印并更新任务状态
         boolean finished = true;
+        boolean failture = false;
         String tpl = "%s %s [%s]";
         StringBuilder detailState = new StringBuilder();
         for (ProcessTask processTask : this.processTasks) {
             if (!processTask.finished()) {
                 finished = false;
             }
+            if(TaskState.FAILTURE.equals(processTask.getState())) {
+                failture = true;
+            }
             detailState.append(String.format("%s: %s, ", processTask.code.getName(), processTask.state.getName()));
         }
         if (finished) {
             this.setTaskState(TaskState.FINISH);
+        }
+        if(failture) {
+            this.setTaskState(TaskState.FAILTURE);
         }
         System.out.println(String.format(tpl, this.taskId, taskState.getName(), detailState));
     }
@@ -118,6 +127,6 @@ public class Task {
      * @return
      */
     public boolean finished() {
-        return TaskState.FINISH.equals(taskState);
+        return TaskState.FINISH.equals(taskState) || TaskState.FAILTURE.equals(taskState);
     }
 }

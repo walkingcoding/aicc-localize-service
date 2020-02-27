@@ -1,13 +1,13 @@
 package com.walkingcoding.aicc.processor.handler.impl;
 
 import com.walkingcoding.aicc.processor.config.GlobalConfig;
+import com.walkingcoding.aicc.processor.config.ProcessTask;
 import com.walkingcoding.aicc.processor.config.Task;
+import com.walkingcoding.aicc.processor.enums.TaskState;
 import com.walkingcoding.aicc.processor.handler.CourseHandler;
-import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -20,7 +20,6 @@ import java.util.concurrent.TimeUnit;
  */
 public class AiccCourseHandler implements CourseHandler {
 
-    private Logger logger = Logger.getLogger(AiccCourseHandler.class);
     private int maximumPoolSize = 10;
     private ExecutorService executorService;
 
@@ -72,12 +71,15 @@ public class AiccCourseHandler implements CourseHandler {
         if (tasks == null || tasks.isEmpty()) {
             return;
         }
-        tasks.forEach(task -> {
-            long start = System.currentTimeMillis();
+        for (Task task : tasks) {
             // 执行子任务
-            task.getProcessTasks().forEach(processTask -> processTask.execute(task, globalConfig));
-            logger.info(String.format("[%s]执行完成，耗时: [%ss].", task.getTaskId(), (System.currentTimeMillis() - start) / 1000));
-        });
+            for (ProcessTask processTask : task.getProcessTasks()) {
+                processTask.execute(task, globalConfig);
+                if (TaskState.FAILTURE.equals(processTask.getState())) {
+                    break;
+                }
+            }
+        }
 
     }
 

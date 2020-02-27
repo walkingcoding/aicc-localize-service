@@ -54,17 +54,22 @@ public abstract class ProcessTask {
     public void execute(Task task, GlobalConfig globalConfig) {
         this.state = TaskState.PROCESSING;
         task.setTaskState(TaskState.PROCESSING);
-        if (!taskSuccessExecuted(task, globalConfig)) {
+        File resourceRoot = getResourceRoot(task, globalConfig);
+        File distRoot = getDistRoot(task, globalConfig);
+        if (!taskSuccessExecuted(resourceRoot, distRoot)) {
             try {
                 executeTask(task, globalConfig);
+                if(TaskState.PROCESSING.equals(this.state)) {
+                    this.state = TaskState.FINISH;
+                }
             } catch (Exception e) {
                 e.printStackTrace();
                 this.state = TaskState.FAILTURE;
                 this.errorMessage = e.getMessage();
             }
+        }else {
+            this.state = TaskState.FINISH;
         }
-
-        this.state = TaskState.FINISH;
     }
 
     public boolean finished() {
@@ -73,42 +78,47 @@ public abstract class ProcessTask {
     }
 
     /**
-     * 输出课件目录
+     * 课件输出资源文件目录
      *
      * @param task         任务对象
      * @param globalConfig 全局配置
      * @return
      */
-    public File getCourseRoot(Task task, GlobalConfig globalConfig) {
-        return Paths.get(globalConfig.getWorkspace(), globalConfig.getResourceFileFolder(), task.getTaskId()).toFile();
-    }
-
     public File getResourceRoot(Task task, GlobalConfig globalConfig) {
         return Paths.get(globalConfig.getWorkspace(), globalConfig.getResourceFileFolder(), task.getTaskId()).toFile();
     }
 
+    /**
+     * 获取课件输出目录
+     *
+     * @param task         任务
+     * @param globalConfig 全局配置
+     * @return
+     */
     public File getDistRoot(Task task, GlobalConfig globalConfig) {
         return Paths.get(globalConfig.getWorkspace(), globalConfig.getDistFileFolder(), task.getTaskId()).toFile();
     }
 
     /**
-     * 输出的相对目录
+     * 获取课件模版目录
      *
+     * @param task         任务
+     * @param globalConfig 全局配置
      * @return
      */
-    public abstract String outputDirectory();
+    public File getTemplateDir(Task task, GlobalConfig globalConfig) {
+        return Paths.get(globalConfig.getWorkspace(), globalConfig.getTemplateFileFolder()).toFile();
+    }
+
 
     /**
      * 任务是否已经成功执行过
      *
-     * @param task         任务对象
-     * @param globalConfig 全局配置
+     * @param resourceRoot 课件资源文件路名
+     * @param distRoot     课件目标文件路径
      * @return
      */
-    protected boolean taskSuccessExecuted(Task task, GlobalConfig globalConfig) {
-        File courseRoot = getCourseRoot(task, globalConfig);
-        return new File(courseRoot, outputDirectory()).exists();
-    }
+    protected abstract boolean taskSuccessExecuted(File resourceRoot, File distRoot);
 
     /**
      * 执行子任务
@@ -120,4 +130,11 @@ public abstract class ProcessTask {
     public abstract void executeTask(Task task, GlobalConfig globalConfig) throws Exception;
 
 
+    public TaskState getState() {
+        return state;
+    }
+
+    public ProcessTaskType getCode() {
+        return code;
+    }
 }

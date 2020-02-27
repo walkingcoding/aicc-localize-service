@@ -32,7 +32,7 @@ public class PptSwfSourceExtractTask extends ProcessTask {
     @Override
     public void executeTask(Task task, GlobalConfig globalConfig) {
 
-        String outputDir = super.getCourseRoot(task, globalConfig).getPath();
+        String outputDir = super.getResourceRoot(task, globalConfig).getPath();
 
         // 获取swf列表
         File directory = new File(task.getOriginFile(), pptFileDirectory);
@@ -45,7 +45,7 @@ public class PptSwfSourceExtractTask extends ProcessTask {
     }
 
     @Override
-    public String outputDirectory() {
-        return outputDirectory;
+    protected boolean taskSuccessExecuted(File resourceRoot, File distRoot) {
+        return new File(resourceRoot, "ppt").exists();
     }
 }

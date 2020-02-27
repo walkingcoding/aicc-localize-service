@@ -52,7 +52,7 @@ public class EncodingTranscodingTask extends ProcessTask {
     }
 
     @Override
-    public String outputDirectory() {
-        return transcodingFilePath;
+    protected boolean taskSuccessExecuted(File resourceRoot, File distRoot) {
+        return new File(resourceRoot, transcodingFilePath).exists();
     }
 }

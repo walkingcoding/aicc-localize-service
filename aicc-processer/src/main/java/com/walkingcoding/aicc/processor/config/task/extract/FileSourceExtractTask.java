@@ -54,7 +54,7 @@ public class FileSourceExtractTask extends ProcessTask {
     }
 
     @Override
-    public String outputDirectory() {
-        return "file";
+    protected boolean taskSuccessExecuted(File resourceRoot, File distRoot) {
+        return new File(resourceRoot, "file").exists();
     }
 }
