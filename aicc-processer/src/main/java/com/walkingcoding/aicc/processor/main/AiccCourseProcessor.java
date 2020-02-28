@@ -4,6 +4,7 @@ import com.walkingcoding.aicc.processor.config.GlobalConfig;
 import com.walkingcoding.aicc.processor.config.Task;
 import com.walkingcoding.aicc.processor.enums.TaskState;
 import com.walkingcoding.aicc.processor.handler.impl.AiccCourseHandler;
+import com.walkingcoding.aicc.processor.util.PrintColorUtils;
 
 import java.io.File;
 import java.util.Arrays;
@@ -31,7 +32,7 @@ public class AiccCourseProcessor {
     /**
      * 工作空间目录
      */
-    private String workspace = "/Users/songhuiqing/docker/nginx/html/workspace";
+    private String workspace;
 
     /**
      * 源文件目录
@@ -40,7 +41,7 @@ public class AiccCourseProcessor {
     /**
      * 模版文件目录
      */
-    private String templateFileFolder = "templates/aicc01";
+    private String templateFileFolder = "templates/default";
 
     /**
      * 生成资源文件目录
@@ -64,7 +65,40 @@ public class AiccCourseProcessor {
      * @param args 参数数组
      */
     private void setArgs(String[] args) {
-        // TODO 接收输入参数
+        if (args != null || args.length != 0) {
+            this.workspace = args[0];
+            if (args.length > 1) {
+                this.parallelSize = Integer.parseInt(args[2]);
+            }
+            if (args.length > 2) {
+                this.templateFileFolder = args[2];
+            }
+        }
+
+        if (this.workspace == null || "".equalsIgnoreCase(this.workspace)) {
+            System.err.println("工作空间不能为空");
+            System.exit(0);
+        } else if (!new File(this.workspace).exists()) {
+            System.err.println(String.format("目录%s不存在", this.workspace));
+            System.exit(0);
+        }
+
+        System.setProperty("workspace", this.workspace);
+
+    }
+
+    private void setArgs() throws InterruptedException {
+        MainFrame mainFrame = new MainFrame();
+        while (true) {
+            Thread.sleep(10 * 1000);
+            if (mainFrame.getArgsSuccess()) {
+                break;
+            }
+        }
+        this.workspace = mainFrame.getWorkspace();
+        this.templateFileFolder = mainFrame.getTemplateFileFolder();
+        this.parallelSize = mainFrame.getParallelSize();
+        System.setProperty("workspace", this.workspace);
     }
 
     /**
@@ -108,8 +142,16 @@ public class AiccCourseProcessor {
         long start = System.currentTimeMillis();
 
         AiccCourseProcessor processor = new AiccCourseProcessor();
+        System.out.print("通过界面设置参数，请输入1：");
+        String argsType = scanner();
         // 设置参数
-        processor.setArgs(args);
+        if ("1".equalsIgnoreCase(argsType)) {
+            processor.setArgs();
+        } else {
+            processor.setArgs(args);
+        }
+
+
         // 加载课件
         processor.loadFiles();
         // 初始化任务
@@ -126,25 +168,34 @@ public class AiccCourseProcessor {
         System.out.println(String.format("并发线程数：%s", parallelSize));
         System.out.println(String.format("每门课件预计消耗时间[%s]分钟", preMinutes));
         System.out.println(String.format("预计消耗总时间[%s]分钟", total));
+        System.out.println("10秒后开始进行课件加工...");
+        Thread.sleep(10 * 1000);
+        // 开始执行课件加工
+        processor.execute();
 
-        if (continueOrNot()) {
-            // 开始执行课件加工
-            processor.execute();
+        while (true) {
 
-            while (true) {
-
-                List<Task> tasks = processor.getTasks();
-                boolean flag = printProgress(tasks);
-                if (flag) {
-                    System.exit(0);
-                } else {
-                    Thread.sleep(10 * 1000);
-                }
-
+            List<Task> tasks = processor.getTasks();
+            boolean flag = printProgress(tasks);
+            if (flag) {
+                break;
+            } else {
+                Thread.sleep(30 * 1000);
             }
-        }
-        System.out.println(String.format("********** 程序结束, 共计花费时间: [%s]分钟 **********", (System.currentTimeMillis() - start) / 1000));
 
+        }
+        System.out.println(String.format("********** 程序结束, 共计花费时间: [%s]分钟 **********", (System.currentTimeMillis() - start) / 1000 / 60));
+
+    }
+
+    /**
+     * 控制台输入
+     *
+     * @return
+     */
+    public static String scanner() {
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
     }
 
     /**
@@ -154,14 +205,13 @@ public class AiccCourseProcessor {
      */
     public static boolean continueOrNot() {
         System.out.print("********** 执行请输入y, 取消请输入n: ");
-        Scanner scanner = new Scanner(System.in);
-        String nextLine = scanner.nextLine();
+        String nextLine = scanner();
         while (true) {
             if ("y".equalsIgnoreCase(nextLine) || "n".equalsIgnoreCase(nextLine)) {
                 break;
             }
             System.out.println("********** 请输入: Y/y - 开始执行, N/n - 不执行");
-            nextLine = scanner.nextLine();
+            nextLine = scanner();
         }
         return "y".equalsIgnoreCase(nextLine);
     }

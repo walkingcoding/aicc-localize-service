@@ -2,6 +2,8 @@ package com.walkingcoding.aicc.processor.config;
 
 import com.walkingcoding.aicc.processor.enums.ProcessTaskType;
 import com.walkingcoding.aicc.processor.enums.TaskState;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.File;
 import java.nio.file.Paths;
@@ -12,6 +14,8 @@ import java.nio.file.Paths;
  * @author songhuiqing
  */
 public abstract class ProcessTask {
+
+    Log log = LogFactory.getLog(ProcessTask.class);
 
     /**
      * 子任务类型
@@ -59,15 +63,16 @@ public abstract class ProcessTask {
         if (!taskSuccessExecuted(resourceRoot, distRoot)) {
             try {
                 executeTask(task, globalConfig);
-                if(TaskState.PROCESSING.equals(this.state)) {
+                if (TaskState.PROCESSING.equals(this.state)) {
                     this.state = TaskState.FINISH;
                 }
             } catch (Exception e) {
-                e.printStackTrace();
                 this.state = TaskState.FAILTURE;
                 this.errorMessage = e.getMessage();
+                log.error("任务执行异常", e);
+
             }
-        }else {
+        } else {
             this.state = TaskState.FINISH;
         }
     }
@@ -107,7 +112,11 @@ public abstract class ProcessTask {
      * @return
      */
     public File getTemplateDir(Task task, GlobalConfig globalConfig) {
-        return Paths.get(globalConfig.getWorkspace(), globalConfig.getTemplateFileFolder()).toFile();
+        File tmpFile = new File(globalConfig.getTemplateFileFolder());
+        if (tmpFile.exists()) {
+            return tmpFile;
+        }
+        return new File(globalConfig.getWorkspace(), globalConfig.getTemplateFileFolder());
     }
 
 
